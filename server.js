@@ -7,7 +7,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 8003
 const { getColors, createFav, favColors, deleteFav, updateFav } = require('./controller/colors')
 
-mongoose.connect('mongodb://localhost:27017/Jamal',
+mongoose.connect(`${process.env.MONGO_DB_URL}/Jamal`,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 app.use(cors());
